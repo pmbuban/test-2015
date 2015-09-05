@@ -1,0 +1,54 @@
+mixin KeyboardKey(key)
+  li
+    a(href="#")
+      .key-container(class="#{key.key_shape}")
+        .character!= key.key_char
+
+
+extends ../layouts/main
+block content
+  .row.row-centered
+    .col-xs-11.col-centered
+      #widget-container
+        .row
+          .col-xs-12
+            #title-container
+              h1 Search Widget
+        //- keyboard and search results
+        .row
+          .col-xs-12.col-sm-7
+            #content-container
+              //- input field
+              .row.row-centered
+                .col-xs-11.col-centered
+                  #search-container
+                    input(type="text", name="searchTerm", tabindex="1", id="searchField")
+                    #clear-search
+
+              //- keybaord
+              .row.row-centered
+                .col-xs-11.col-centered
+                  #keyboard-container
+                    ul#row-1
+                      each key in keyboard_layout.row_1
+                        +KeyboardKey(key)
+                    br
+
+                    ul#row-2
+                      each key in keyboard_layout.row_2
+                        +KeyboardKey(key)
+                    br
+
+                    ul#row-3
+                      each key in keyboard_layout.row_3
+                        +KeyboardKey(key)
+                    br
+
+                    ul#row-4
+                      each key in keyboard_layout.row_4
+                        +KeyboardKey(key)
+
+          .col-xs-12.col-sm-5
+            //- scrollable search results
+            h2 search results
+
