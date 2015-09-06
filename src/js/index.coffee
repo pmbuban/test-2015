@@ -28,7 +28,6 @@ class CountrySearch.App
     @models =
       countryModel: new CountrySearch.Models.CountryModel()
 
-
     #collections
     @collections =
       countryCollection: new CountrySearch.Collections.CountryCollection(countryData.countries.country)
@@ -39,8 +38,7 @@ class CountrySearch.App
       searchView: new CountrySearch.Views.SearchView()
       resultsView: new CountrySearch.Views.ResultsView()
 
-
 $ ->
   app = new CountrySearch.App
-    el: $("#country-search")
+    el: $("body")
   return

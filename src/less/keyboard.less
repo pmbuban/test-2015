@@ -3,7 +3,7 @@
   padding:20px 0;
 }
 
-.key-container{
+a.key-container{
   float:left;
   text-align: center;
   text-transform: uppercase;
@@ -13,6 +13,12 @@
   display:table;
   height:43px;
   font-family:@myriadpro-reg;
+  text-decoration: none;
+  &.round, &.square, &.rect{
+    &:hover, &:active, &:focus{
+      background-color: @gray-border;
+    }
+  }
   &.round{
     .border-radius(30px);
     width:43px;
@@ -29,12 +35,22 @@
     width:67px;
     background-color: @char-bg;
   }
+
   .character{
     display:table-cell;
     vertical-align: middle;
     font-size: 18px;
     top: 1px;
     position: relative;
+    .enter-btn{
+      background-image: url(../img/enter-btn.png);
+      background-repeat: no-repeat;
+      height:17px;
+      width:27px;
+      margin: 0 auto;
+      top: -1px;
+      position: relative;
+    }
   }
 }
 

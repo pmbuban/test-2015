@@ -1,5 +1,6 @@
-Backbone = require 'backbone'
-$ = require 'jquery'
+_ = (window._)
+Backbone = (window.Backbone)
+$ = (window.jQuery)
 Backbone.$ = $
 
 module.exports = Backbone.View.extend

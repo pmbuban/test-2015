@@ -1,0 +1,19 @@
+#keyboard-container
+  ul#row-1
+    each key in keyboard_layout.row_1
+      +KeyboardKey(key)
+  br
+
+  ul#row-2
+    each key in keyboard_layout.row_2
+      +KeyboardKey(key)
+  br
+
+  ul#row-3
+    each key in keyboard_layout.row_3
+      +KeyboardKey(key)
+  br
+
+  ul#row-4
+    each key in keyboard_layout.row_4
+      +KeyboardKey(key)
