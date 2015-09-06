@@ -1,22 +1,23 @@
+var countries;
+
+
 $(function(){
   function init(){
     loadJSON();
   }
+
   function loadJSON(){
     $.getJSON("../data/countries.json", function(data){
-      var countries = data.countries.country;
+      countries = data.countries.country;
       // console.log(countries, countries.length)
       $.each(countries, function(id,countryInfo){
         processCountry(countryInfo)
       });
-
-
     });
   }
 
   function processCountry(countryData){
     var langList = [];
-
     if(countryData.hasOwnProperty('languages')){
       $.each(countryData.languages, function(id, langInfo){
         // console.log(langInfo)
@@ -32,7 +33,7 @@ $(function(){
   }
 
   function addCountry(country, langs){
-    console.log(langs)
+    // console.log(langs)
     var listEntry = "";
 
     if(langs.length == 1){
@@ -47,10 +48,12 @@ $(function(){
       }
       listEntry = '<li><a class="country-container"><div class="country-name">' + country + '</div><div class="country-langs">'+ langStr + '</div></a></li>';
     }
-    console.log(listEntry)
+    // console.log(listEntry)
 
     $("ul#results").append(listEntry)
   }
+
+
 
   init();
 });

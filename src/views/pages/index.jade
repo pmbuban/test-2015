@@ -1,16 +1,8 @@
-mixin KeyboardKey(key)
-  li
-    a.key-container(class="#{key.key_shape}", href="#", data-char-id="#{key.key_char}")
-      -if (key.key_char === "enter"){
-        .character
-          .enter-btn
-      -} else {
-        .character!= key.key_char
-      -}
-
-
 extends ../layouts/main
 block content
+
+  include ../includes/mixins
+
   .row.row-centered
     .col-xs-11.col-centered
       #widget-container
