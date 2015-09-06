@@ -82,10 +82,6 @@
       {
         "key_char":"p",
         "key_shape":"square"
-      },
-      {
-        "key_char":"0",
-        "key_shape":"square"
       }
     ],
     "row_3":[
@@ -156,7 +152,7 @@
         "key_shape":"square"
       },
       {
-        "key_char":"shift",
+        "key_char":"space",
         "key_shape":"rect"
       },
       {

@@ -1,5 +1,6 @@
 #keyboard-container{
   max-width: 100%;
+  padding:20px 0;
 }
 
 .key-container{
@@ -10,28 +11,30 @@
   border: 1px solid @key-color;
   font-family: Helvetica, Arial, sans-serif;
   display:table;
-  height:30px;
-
+  height:43px;
+  font-family:@myriadpro-reg;
   &.round{
     .border-radius(30px);
-    width:30px;
+    width:43px;
     background-color: @white;
 
   }
   &.square{
     .border-radius(5px);
-    width:30px;
+    width:43px;
     background-color: @char-bg;
   }
   &.rect{
     .border-radius(5px);
-    width:40px;
+    width:67px;
     background-color: @char-bg;
   }
   .character{
     display:table-cell;
     vertical-align: middle;
-
+    font-size: 18px;
+    top: 1px;
+    position: relative;
   }
 }
 
@@ -40,21 +43,21 @@ ul{
   margin-bottom: 10px;
   padding: 0;
   margin: 0 auto;
+  text-align: center;
 
   &#row-1,
   &#row-2,
   &#row-3,
   &#row-4{
+    height:30px;
     a.key-container{
       &:hover,&:active,&:visited{
-        background-color: @dark-gray;
+        // background-color: @dark-gray;
       }
     }
-
   }
   li{
     display: inline-block;;
-
   }
 }
 

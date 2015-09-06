@@ -45,6 +45,13 @@
     "grunt-rsync": "^0.6.2",
     "matchdep": "~0.3.0"
   },
+  "browserify-shim": {
+    "jquery": "global:$",
+    "jquery": "global:jQuery",
+    "jquery": "global:jquery",
+    "_": "global:_",
+    "Backbone": "global:Backbone"
+  },
   "license": "MIT",
   "engines": {
     "node": ">=0.10"

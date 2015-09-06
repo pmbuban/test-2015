@@ -19,9 +19,6 @@ h1,h2,h3,h4,h5,h6{
     margin-right:-4px;
 }
 
-#widget-container {
-  margin: 0 auto;
-}
 
 #title-container{
   background-color: @dark-gray;
@@ -35,17 +32,34 @@ h1,h2,h3,h4,h5,h6{
   }
 }
 
-#content-container{
+#widget-container {
+  margin: 0 auto;
+  width:960px;
+  margin:0 auto;
+}
+
+
+#left-container,
+#right-container{
+  height:360px;
   background-color: @light-gray;
-  .border-radius (0 0 20px 20px);
+  padding:40px 20px;
+  -webkit-box-shadow: 0px 10px 0px 0px rgba(198,198,198,1);
+  -moz-box-shadow: 0px 10px 0px 0px rgba(198,198,198,1);
+  box-shadow: 0px 10px 0px 0px rgba(198,198,198,1);
+}
+
+#left-container{
+  width:60%;
+  float:left;
+  .border-radius (0 0 0 20px);
   #search-container{
     position: relative;
-    padding:20px 0;
+    padding: 0;
   }
   input{
     border: 1px solid @gray-border;
     background-color: @dark-gray;
-
 
     &#searchField{
       width:100%;
@@ -62,6 +76,18 @@ h1,h2,h3,h4,h5,h6{
     z-index: 20;
     position:absolute;
     right:15px;
-    top:33px;
+    top:13px;
+  }
+}
+
+#right-container{
+  width:40%;
+  float:right;
+  .border-radius(0 0 20px 0);
+  #results-container{
+    border: 1px solid @gray-border;
+    height: 280px;
+    width: 320px;
+    overflow-y: scroll;
   }
 }
