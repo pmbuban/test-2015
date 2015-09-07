@@ -21,7 +21,7 @@ $("a.key-container").click(function(e){
   if (character === "space") {
     character = " ";
   } else if (character === "enter"){
-    // run search function
+    // run search function in results.js
     searchCountries( $("input#search").val() );
     character = "";
   }

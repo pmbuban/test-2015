@@ -1,21 +1,16 @@
-.row
-  .col-xs-12
-    #title-container
-      h1 Search Widget
+
+#title-container
+  h1 Search Widget
 //- keyboard and search results
 
 #left-container
   //- input field
-  .row.row-centered
-    .col-xs-11.col-centered
-      #search-container
-        input(type="search", name="search", tabindex="1", id="search", value="Search...")
-        #clear-search
+  #search-container
+    input(type="search", name="search", tabindex="1", id="search", value="Search...")
+    #clear-search
 
   //- keybaord
-  .row.row-centered
-    .col-xs-11.col-centered
-      include ./keyboard
+  include ./keyboard
 
 //- scrollable search results
 #right-container
