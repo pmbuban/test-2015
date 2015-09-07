@@ -63,7 +63,7 @@ function verifyLang(searchTerm, langArray, index){
   for (var i=0; i < langArray.length; i++){
     //search until match found, no need to keep searching
     langResult = langArray[i].search(new RegExp(searchTerm, "i"));
-    console.log(langArray.length, langArray[i], langResult)
+    // console.log(langArray.length, langArray[i], langResult)
     if(langResult != -1){
       if(!matchFound){
         matchFound = true;
