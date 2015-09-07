@@ -37,7 +37,7 @@ function addCountry(country, langs){
   var listEntry = "";
 
   if(langs.length == 1){
-    listEntry = '<li><a class="country-container"><div class="country-name">' + country + '</div><div class="country-langs">'+ langs + '</div></a></li>'
+    listEntry = '<li><a class="country-container"><div class="hover-bar"></div><div class="country-name">' + country + '</div><div class="country-langs">'+ langs + '</div></a></li>'
   } else {
     var langStr="";
     for(var i=0; i<langs.length; i++){
@@ -50,7 +50,7 @@ function addCountry(country, langs){
         }
       }
     }
-    listEntry = '<li><a class="country-container"><div class="country-name">' + country + '</div><div class="country-langs">'+ langStr + '</div></a></li>';
+    listEntry = '<li><a class="country-container"><div class="hover-bar"></div><div class="country-name">' + country + '</div><div class="country-langs">'+ langStr + '</div></a></li>';
   }
   // console.log(listEntry)
 

@@ -36,3 +36,8 @@ $("a.key-container").click(function(e){
   inputUsed = true;
 });
 
+$(document).keypress(function(e) {
+  if(e.which == 13) {
+     searchCountries( $("input#search").val() );
+  }
+});

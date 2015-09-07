@@ -4,25 +4,36 @@ ul{
       width:100%;
       text-align: left;
       border-bottom: 1px solid @gray-border;
+      position: relative;
+
     }
     a{
       display:inline-block;
       width:100%;
-      padding:8px 20px;
+      position: relative;
+      background-color: @result-white;
       &:hover, &:focus, &:active{
         background-color: @darker-gray;
+        .hover-bar{
+          width:10px;
+          height:100%;
+          background-color: @gray-border;
+          position: absolute;
+        }
       }
       &.country-container{
         .country-name{
           font-size: 16px;
           color:@black;
+          margin: 8px 20px 0;
         }
         .country-langs{
           font-size: 13px;
           color:@gray-lang;
-
+          margin: 0 20px 8px;
         }
       }
+
     }
 
   }
