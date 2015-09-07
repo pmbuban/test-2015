@@ -29,6 +29,7 @@ function searchCountries(searchTerm){
     if(!resultFound){
       //search
       if(countries[i].hasOwnProperty('languages')){
+
         resultFound = verifyLang(searchTerm, countries[i].languages, i);
         if(resultFound){
           addCountry(countries[i].name, countries[i].languages)
@@ -56,17 +57,25 @@ function verifyName(searchTerm, countryName, index){
 }
 
 function verifyLang(searchTerm, langArray, index){
+  var langResult;
+  var matchFound = false;
 
   for (var i=0; i < langArray.length; i++){
     //search until match found, no need to keep searching
-    var langResult = langArray[i].search(new RegExp(searchTerm, "i"));
-    if(langResult > -1){
-      return true;
-    } else {
-      return false
+    langResult = langArray[i].search(new RegExp(searchTerm, "i"));
+    console.log(langArray.length, langArray[i], langResult)
+    if(langResult != -1){
+      if(!matchFound){
+        matchFound = true;
+      }
     }
-
+    // } else {
+    //   if(!matchFound){
+    //     matchFound = false
+    //   }
+    // }
   }
+  return matchFound;
 }
 
 function clearResults(){

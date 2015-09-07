@@ -6,7 +6,7 @@ function init(){
 }
 
 function loadJSON(){
-  $.getJSON("../data/countries.json", function(data){
+  $.getJSON("./data/countries.json", function(data){
     countries = data.countries.country;
     countryTotal = countries.length;
     // console.log(countries, countries.length)
