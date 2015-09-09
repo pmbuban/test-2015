@@ -2,14 +2,15 @@ var countries;
 var countryTotal;
 
 function init(){
+  //set focus to input
   loadJSON();
 }
 
 function loadJSON(){
   $.getJSON("./data/countries.json", function(data){
+    //add data to global variable so that it is accessible to other functions
     countries = data.countries.country;
     countryTotal = countries.length;
-    // console.log(countries, countries.length)
     $.each(countries, function(id,countryInfo){
       processCountry(countryInfo);
     });
