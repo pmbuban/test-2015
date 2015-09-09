@@ -2,7 +2,6 @@ var countries;
 var countryTotal;
 
 function init(){
-  //set focus to input
   loadJSON();
 }
 
@@ -28,7 +27,6 @@ function processCountry(countryData){
 }
 
 function addCountry(country, langs){
-  // console.log(langs)
   var listEntry = "";
 
   // process language depending on amount of languages
@@ -37,10 +35,12 @@ function addCountry(country, langs){
     listEntry = '<li><a class="country-container"><div class="hover-bar"></div><div class="country-name">' + country + '</div><div class="country-langs">'+ langs + '</div></a></li>'
   } else {
     var langStr="";
+    // add commas to separate multiple languages
     for(var i=0; i<langs.length; i++){
       langStr += langs[i]
       if(i != langs.length){
         if(i === langs.length-1){
+          // last language in list does not require a comma
           langStr += ""
         } else {
           langStr += ", "
