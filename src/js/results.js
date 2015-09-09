@@ -8,38 +8,34 @@ function searchCountries(searchTerm){
   clearResults();
 
   for (var i=0; i < countryTotal; i++){
-    //search name if field isn't empty
+    //search country name if field isn't empty
     var resultFound = false;
 
+    // search countries for match
     if(countries[i].name){
       resultFound = verifyName(searchTerm, countries[i].name, i)
       if(resultFound){
-        // console.log (i, countries[i].name, "country match");
-
-        //add search results
+        //pass search results and languages
         if(countries[i].hasOwnProperty('languages')){
-          addCountry(countries[i].name, countries[i].languages)
+          addCountry(countries[i].name, countries[i].languages);
         } else{
-          addCountry(countries[i].name, countries[i].languagesError)
+          addCountry(countries[i].name, countries[i].languagesError);
         }
       }
     }
 
     //search languages if match isn't found in country name
     if(!resultFound){
-      //search
+      //check if property languages/languagesError exists
       if(countries[i].hasOwnProperty('languages')){
-
         resultFound = verifyLang(searchTerm, countries[i].languages, i);
         if(resultFound){
-          addCountry(countries[i].name, countries[i].languages)
-          // console.log (i, countries[i].name, countries[i].languages.length, countries[i].languages, "lang match");
+          addCountry(countries[i].name, countries[i].languages);
         }
       } else {
         resultFound = verifyLang(searchTerm, countries[i].languagesError, i);
         if(resultFound){
-          addCountry(countries[i].name, countries[i].languagesError)
-          // console.log (i, countries[i].name, countries[i].languagesError.length, countries[i].languagesError, "langerror match");
+          addCountry(countries[i].name, countries[i].languagesError);
         }
       }
     }
@@ -61,19 +57,15 @@ function verifyLang(searchTerm, langArray, index){
   var matchFound = false;
 
   for (var i=0; i < langArray.length; i++){
-    //search until match found, no need to keep searching
+    // search until match found, no need to keep searching
     langResult = langArray[i].search(new RegExp(searchTerm, "i"));
-    // console.log(langArray.length, langArray[i], langResult)
+    // a match would return a value greater than -1
     if(langResult != -1){
+      //match only needs to be set to true once
       if(!matchFound){
         matchFound = true;
       }
     }
-    // } else {
-    //   if(!matchFound){
-    //     matchFound = false
-    //   }
-    // }
   }
   return matchFound;
 }

@@ -17,26 +17,22 @@ function loadJSON(){
   });
 }
 
+//process country
 function processCountry(countryData){
   var langList = [];
   if(countryData.hasOwnProperty('languages')){
-    $.each(countryData.languages, function(id, langInfo){
-      // console.log(langInfo)
-      langList.push(langInfo)
-    });
+    addCountry(countryData.name, countryData.languages)
   } else {
-    $.each(countryData.languagesError, function(id, langInfo){
-      // console.log(langInfo)
-      langList.push(langInfo)
-    });
+    addCountry(countryData.name, countryData.languagesError)
   }
-  addCountry(countryData.name, langList)
 }
 
 function addCountry(country, langs){
   // console.log(langs)
   var listEntry = "";
 
+  // process language depending on amount of languages
+  // formatting changes for each case
   if(langs.length == 1){
     listEntry = '<li><a class="country-container"><div class="hover-bar"></div><div class="country-name">' + country + '</div><div class="country-langs">'+ langs + '</div></a></li>'
   } else {
@@ -53,7 +49,6 @@ function addCountry(country, langs){
     }
     listEntry = '<li><a class="country-container"><div class="hover-bar"></div><div class="country-name">' + country + '</div><div class="country-langs">'+ langStr + '</div></a></li>';
   }
-  // console.log(listEntry)
 
   $("ul#results").append(listEntry)
 }
