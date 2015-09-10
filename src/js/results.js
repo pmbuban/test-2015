@@ -68,3 +68,8 @@ function verifyLang(searchTerm, langArray, index){
 function clearResults(){
   $("ul#results").html("");
 }
+
+function initSearch(){
+  clearResults();
+  searchCountries( $("input#search").val() );
+}

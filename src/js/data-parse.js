@@ -10,9 +10,14 @@ function loadJSON(){
     //add data to global variable so that it is accessible to other functions
     countries = data.countries.country;
     countryTotal = countries.length;
-    $.each(countries, function(id,countryInfo){
-      processCountry(countryInfo);
-    });
+
+    showAllCountries(countries)
+  });
+}
+
+function showAllCountries(countryData){
+  $.each(countryData, function(id,countryInfo){
+    processCountry(countryInfo);
   });
 }
 
