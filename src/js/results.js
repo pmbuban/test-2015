@@ -1,10 +1,5 @@
-
-
 // called from keyboard.js > "enter"
 function searchCountries(searchTerm){
-
-  // console.log(searchTerm, countryTotal);
-
   clearResults();
 
   for (var i=0; i < countryTotal; i++){
@@ -43,8 +38,8 @@ function searchCountries(searchTerm){
 }
 
 function verifyName(searchTerm, countryName, index){
+  // search via regular expression
   var nameResult = countryName.search(new RegExp(searchTerm, "i"));
-  // console.log(index, countryName, result);
   if(nameResult > -1){
     return true;
   } else {

@@ -1,6 +1,7 @@
-var inputUsed = false;
+var inputUsed = false; //tracks if input has been clicked
 var searchMethod = "instant"; //search as you type
-// var searchMethod = "interaction"; //search as you type
+// var searchMethod = "interaction"; //search when you hit enter
+
 //clear search field
 $("#clear-search").click(function(){
   $('input#search').val("");
@@ -15,19 +16,18 @@ $("input#search").click(function(){
   }
 });
 
-// -----------------------------------------------
-// -------------- 2 ways to search ---------------
-// - must set the searchMethod variable to "instant"/"interaction"
 $(document).keyup(function(e) {
+  // -----------------------------------------------
+  // -------------- 2 ways to search ---------------
+  // - must set the searchMethod variable to "instant"/"interaction"
   if(searchMethod == "interaction"){
-    //serach when user hits enter on keyboard or virtual keyboard
+    // method 1 - search after user hits "enter"
     if(e.which == 13) {
        searchCountries( $("input#search").val() );
     }
   } else if (searchMethod == "instant"){
-    //search as user types
-    clearResults();
-    searchCountries( $("input#search").val() );
+    // method 1 - search as user types
+    initSearch()
   }
 });
 
@@ -52,6 +52,16 @@ $("a.key-container").click(function(e){
     // append to existing text
     $("input#search").val( $("input#search").val() + character);
   }
+
+  if (searchMethod == "instant"){
+    initSearch();
+  }
+
   inputUsed = true;
 });
 
+function initSearch(){
+  console.log("search: "+$("input#search").val() )
+  clearResults();
+  searchCountries( $("input#search").val() );
+}
