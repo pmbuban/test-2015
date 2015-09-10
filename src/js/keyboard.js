@@ -33,7 +33,6 @@ $("a.key-container").click(function(e){
     // run search function in results.js
     var tmpSearchVal = $("input#search").val();
     tmpSearchVal = tmpSearchVal.substring(0, tmpSearchVal.length - 1);
-    console.log(tmpSearchVal)
     $("input#search").val(tmpSearchVal);
     character = ""
   }
